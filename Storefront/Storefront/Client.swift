@@ -93,6 +93,29 @@ final class Client {
         return task
     }
     
+    @discardableResult
+    func fetchCollectionsMembers(limit: Int = 25, after cursor: String? = nil, productLimit: Int = 25, productCursor: String? = nil, completion: @escaping (PageableArray<CollectionViewModel>?) -> Void) -> Task {
+        
+        let query = ClientQuery.queryForCollectionsMembers(limit: limit, after: cursor, productLimit: productLimit, productCursor: productCursor)
+        let task  = self.client.queryGraphWith(query) { (query, error) in
+            error.debugPrint()
+            
+            if let query = query {
+                let collections = PageableArray(
+                    with:     query.shop.collections.edges,
+                    pageInfo: query.shop.collections.pageInfo
+                )
+                completion(collections)
+            } else {
+                print("Failed to load collections: \(String(describing: error))")
+                completion(nil)
+            }
+        }
+        
+        task.resume()
+        return task
+    }
+    
     // ----------------------------------
     //  MARK: - Products -
     //
