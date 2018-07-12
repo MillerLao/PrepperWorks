@@ -28,6 +28,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.91764705882352937" green="0.31372549019607843" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="aD6-1o-4g2" kind="show" identifier="loginToMenu" id="wd9-M6-ccN"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdb-Df-saQ">
                                 <rect key="frame" x="188" y="405" width="97" height="30"/>
@@ -104,7 +107,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dau-ev-4t0" kind="show" identifier="menuToCart" id="tlw-Bc-qxx"/>
+                                    <segue destination="YUF-MR-hUq" kind="show" identifier="menuToCart" id="6hj-Ow-F2e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGU-UU-KJg">
@@ -116,6 +119,9 @@
                                     <color key="titleColor" red="0.1803921568627451" green="0.078431372549019607" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="jFz-Of-2My" kind="show" identifier="menuToHome" id="W4u-Bd-sQh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-b8-lgq">
                                 <rect key="frame" x="236" y="226" width="84" height="31"/>
@@ -161,6 +167,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="0.91764705882352937" green="0.31372549019607843" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xwx-Ny-EVJ" kind="show" identifier="signupToLogin" id="Zmt-sc-9Ws"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-BP-SUK">
                                 <rect key="frame" x="188" y="404" width="97" height="30"/>
@@ -633,7 +642,8 @@
         <image name="logo" width="229" height="236"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tlw-Bc-qxx"/>
-        <segue reference="apV-bA-whp"/>
+        <segue reference="W4u-Bd-sQh"/>
+        <segue reference="9e8-Xe-Oer"/>
+        <segue reference="Zmt-sc-9Ws"/>
     </inferredMetricsTieBreakers>
 </document>
