@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64493D2A20F7A4990034AB5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D2920F7A4990034AB5D /* SignUpViewController.swift */; };
+		64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */; };
 		9A0ED6861E83F120008C605E /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ED6851E83F120008C605E /* Serializable.swift */; };
 		9A0ED68A1E83FF2D008C605E /* GraphQL+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ED6891E83FF2D008C605E /* GraphQL+Serializable.swift */; };
 		9A0ED6911E842467008C605E /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ED6901E842467008C605E /* CartButton.swift */; };
@@ -165,6 +166,7 @@
 
 /* Begin PBXFileReference section */
 		64493D2920F7A4990034AB5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMembersViewController.swift; sourceTree = "<group>"; };
 		9A0ED6851E83F120008C605E /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		9A0ED6891E83FF2D008C605E /* GraphQL+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GraphQL+Serializable.swift"; sourceTree = "<group>"; };
 		9A0ED6901E842467008C605E /* CartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 			children = (
 				9A9FFF3B1E815F9A00F6DFF7 /* Cells */,
 				9ADAD46C1E563091008AC561 /* CollectionsViewController.swift */,
+				64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				9AAFAB8F1E60C6AC00864A17 /* UIImageView+Remote.swift in Sources */,
 				9AFA3B7D1E6DB7110056C5AA /* ProductsViewController.swift in Sources */,
 				9A0ED6861E83F120008C605E /* Serializable.swift in Sources */,
+				64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */,
 				9A9FFF051E796F2100F6DFF7 /* Paginating.swift in Sources */,
 				9ADAD46D1E563091008AC561 /* CollectionsViewController.swift in Sources */,
 				9AAFAB821E60BEE000864A17 /* CollectionViewModel.swift in Sources */,
