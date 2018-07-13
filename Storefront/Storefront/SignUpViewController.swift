@@ -24,28 +24,6 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: Any) {
         
-        let input = Storefront.CustomerCreateInput.create(
-            email:            .value("john.smith@gmail.com"),
-            password:         .value("123456"),
-            firstName:        .value("John"),
-            lastName:         .value("Smith"),
-            acceptsMarketing: .value(true)
-        )
-        
-        let mutation = Storefront.buildMutation { $0
-            .customerCreate(input: input) { $0
-                .customer { $0
-                    .id()
-                    .email()
-                    .firstName()
-                    .lastName()
-                }
-                .userErrors { $0
-                    .field()
-                    .message()
-                }
-            }
-        }
         
         
     }

@@ -67,14 +67,6 @@ final class Client {
         return task
     }
     
-//    // ----------------------------------
-//    //  MARK: - Accounts -
-//    //
-//    @discardableResult
-//    func createNewUser(email: String, password: String, completion: @escaping ) -> <#return type#> {
-//        <#function body#>
-//    }
-    
     // ----------------------------------
     //  MARK: - Collections -
     //
@@ -151,6 +143,14 @@ final class Client {
         
         task.resume()
         return task
+    }
+    
+    // ----------------------------------
+    //  MARK: - Accounts -
+    //
+    @discardableResult
+    func createNewUser(email: String, password: String, completion: @escaping ) -> <#return type#> {
+        <#function body#>
     }
     
     // ----------------------------------
