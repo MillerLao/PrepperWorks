@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "mountaintint-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "mountaintint-2.png",
       "scale" : "3x"
     }
   ],

@@ -43,13 +43,6 @@ final class ClientQuery {
         }
     }
     
-//    // ----------------------------------
-//    // MARK: - Account -
-//    //
-//    static func mutationForSignUpUser(_ email: String, password: String) -> Storefront.MutationQuery {
-//     
-//    }
-    
     // ----------------------------------
     //  MARK: - Storefront -
     //
@@ -137,6 +130,20 @@ final class ClientQuery {
             }
         }
     }
+    
+//    // ----------------------------------
+//    // MARK: - Account -
+//    //
+//    static func mutationForSignUpUser(_ email: String, password: String) -> Storefront.MutationQuery {
+//        let input = Storefront.CustomerCreateInput.create(
+//            email:            .value("john.smith@gmail.com"),
+//            password:         .value("123456")
+//            
+//            
+//            
+//        )
+//        
+//    }
     
     // ----------------------------------
     //  MARK: - Checkout -
