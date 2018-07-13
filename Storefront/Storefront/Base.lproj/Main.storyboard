@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5HA-7N-vXJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5HA-7N-vXJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,19 +40,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-ar-lRF">
-                                <rect key="frame" x="74" y="459" width="106" height="21"/>
+                                <rect key="frame" x="74" y="458.5" width="106" height="21"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="MPB-JS-ONJ">
-                                <rect key="frame" x="56" y="76" width="262" height="257"/>
+                                <rect key="frame" x="56" y="76" width="263" height="257"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="257" id="2Ic-uJ-JwE"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-Iz-vtj">
-                                <rect key="frame" x="74" y="410" width="63" height="21"/>
+                                <rect key="frame" x="74" y="409.5" width="63" height="21"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -205,13 +204,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGS-XJ-aVT">
-                                <rect key="frame" x="74" y="458" width="106" height="21"/>
+                                <rect key="frame" x="74" y="457.5" width="106" height="21"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDn-DE-Z3y">
-                                <rect key="frame" x="74" y="409" width="63" height="21"/>
+                                <rect key="frame" x="74" y="408.5" width="63" height="21"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -545,21 +544,13 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="homeToCollections" id="apV-bA-whp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="200test" translatesAutoresizingMaskIntoConstraints="NO" id="pGc-h6-Um3">
-                                <rect key="frame" x="58" y="132" width="259" height="257"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="257" id="dn2-c2-vwy"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tbP-cE-Bvt" firstAttribute="top" secondItem="yV8-IZ-x8V" secondAttribute="bottom" id="1uL-V6-dU6"/>
                             <constraint firstItem="tbP-cE-Bvt" firstAttribute="bottom" secondItem="rGM-Ko-X0u" secondAttribute="top" id="B4k-4C-jEp"/>
                             <constraint firstAttribute="trailing" secondItem="ICm-WN-e9d" secondAttribute="trailing" id="DNg-b7-JHS"/>
-                            <constraint firstItem="pGc-h6-Um3" firstAttribute="leading" secondItem="kE7-j9-rAz" secondAttribute="leadingMargin" constant="42" id="DVk-vp-LGE"/>
                             <constraint firstItem="6tj-mG-6N5" firstAttribute="top" secondItem="ICm-WN-e9d" secondAttribute="bottom" id="IHT-8z-EEI"/>
-                            <constraint firstItem="pGc-h6-Um3" firstAttribute="centerX" secondItem="9k4-ze-1KY" secondAttribute="centerX" id="JEB-G7-16C"/>
                             <constraint firstItem="6tj-mG-6N5" firstAttribute="centerX" secondItem="kE7-j9-rAz" secondAttribute="centerX" id="Mnf-eY-iFy"/>
                             <constraint firstItem="ICm-WN-e9d" firstAttribute="leading" secondItem="kE7-j9-rAz" secondAttribute="leading" id="QwA-uk-zRQ"/>
                             <constraint firstAttribute="trailing" secondItem="6tj-mG-6N5" secondAttribute="trailing" id="SQg-j8-OPG"/>
@@ -567,7 +558,6 @@
                             <constraint firstItem="tbP-cE-Bvt" firstAttribute="trailing" secondItem="ICm-WN-e9d" secondAttribute="trailing" id="Uin-4m-nGj"/>
                             <constraint firstItem="6tj-mG-6N5" firstAttribute="top" secondItem="ICm-WN-e9d" secondAttribute="bottom" id="UqW-0Q-EAD"/>
                             <constraint firstItem="rGM-Ko-X0u" firstAttribute="top" secondItem="6tj-mG-6N5" secondAttribute="bottom" id="Vkn-EY-L1i"/>
-                            <constraint firstItem="pGc-h6-Um3" firstAttribute="top" secondItem="yV8-IZ-x8V" secondAttribute="bottom" constant="112" id="XcA-3m-4Lx"/>
                             <constraint firstItem="6tj-mG-6N5" firstAttribute="top" secondItem="9k4-ze-1KY" secondAttribute="bottom" constant="49" id="Xlj-gn-wpD"/>
                             <constraint firstItem="6tj-mG-6N5" firstAttribute="leading" secondItem="kE7-j9-rAz" secondAttribute="leading" id="Z5H-az-T2J"/>
                             <constraint firstItem="9k4-ze-1KY" firstAttribute="centerX" secondItem="kE7-j9-rAz" secondAttribute="centerX" id="d33-ik-hT9"/>
@@ -720,7 +710,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="200test" width="200" height="200"/>
         <image name="homeBackground" width="401" height="643"/>
         <image name="logo" width="229" height="236"/>
         <image name="rockshowtinted" width="383" height="603"/>
