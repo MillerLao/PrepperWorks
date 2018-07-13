@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rockshowtinted" translatesAutoresizingMaskIntoConstraints="NO" id="T7N-0S-GMV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="T7N-0S-GMV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdb-Df-saQ">
@@ -185,7 +185,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rockshowtinted" translatesAutoresizingMaskIntoConstraints="NO" id="e5r-S3-rfW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="e5r-S3-rfW">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-BP-SUK">
@@ -231,6 +231,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="Ehw-hK-m2M" eventType="touchUpInside" id="vMq-4Q-yxh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -256,6 +259,10 @@
                             <constraint firstItem="e5r-S3-rfW" firstAttribute="trailing" secondItem="lnD-jM-J3M" secondAttribute="trailing" id="t0b-Ef-JFx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextLabel" destination="bd4-BP-SUK" id="rUU-A2-DdI"/>
+                        <outlet property="passwordTextLabel" destination="yEa-oZ-aU3" id="uKD-dJ-Sgg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mb-vR-JIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -710,9 +717,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="homeBackground" width="401" height="643"/>
-        <image name="logo" width="229" height="236"/>
-        <image name="rockshowtinted" width="383" height="603"/>
+        <image name="homeBackground" width="200" height="321"/>
+        <image name="loginBackground" width="191" height="301"/>
+        <image name="logo" width="114" height="118"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W4u-Bd-sQh"/>

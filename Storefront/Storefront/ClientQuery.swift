@@ -43,6 +43,13 @@ final class ClientQuery {
         }
     }
     
+//    // ----------------------------------
+//    // MARK: - Account -
+//    //
+//    static func mutationForSignUpUser(_ email: String, password: String) -> Storefront.MutationQuery {
+//     
+//    }
+    
     // ----------------------------------
     //  MARK: - Storefront -
     //
