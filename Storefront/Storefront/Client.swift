@@ -148,8 +148,7 @@ final class Client {
     // ----------------------------------
     //  MARK: - Accounts -
     //
-    @discardableResult
-    func createNewUser(newEmail: String, newPassword: String) -> Task {
+    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?) -> Void) -> Task {
         
         let input = Storefront.CustomerCreateInput.create(
             email:            newEmail,
@@ -171,7 +170,20 @@ final class Client {
             }
         }
         let task = self.client.mutateGraphWith(mutation) {response, error in
+            
+            if let error = error, case .invalidQuery(let reasons) = error {
+                reasons.forEach {
+                    print("Error on \($0.line):\($0.column) - \($0.message)")
+                }
+            }
+            
             error.debugPrint()
+            
+            if let response = response {
+                completion(response.customerCreate?.customer)
+            } else {
+                print("No Customer created")
+            }
         }
         task.resume()
         return task
