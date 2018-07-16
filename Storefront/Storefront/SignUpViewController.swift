@@ -24,8 +24,28 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: Any) {
         
+//        Client.shared.createNewUser(newEmail: emailTextLabel.text, newPassword: passwordTextLabel.text)
         
-        
+        if let email = emailTextLabel.text {
+            if let password = passwordTextLabel.text {
+                let input = Storefront.CustomerCreateInput(email: email, password: password)
+                
+                let mutation = Storefront.buildMutation { $0
+                    .customerCreate(input: input) { $0
+                        .customer { $0
+                            .id()
+                            .email()
+                            .firstName()
+                            .lastName()
+                        }
+                        .userErrors { $0
+                            .field()
+                            .message()
+                        }
+                    }
+                }
+            }
+        }
         
     }
     

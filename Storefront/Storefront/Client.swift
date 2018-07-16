@@ -145,13 +145,37 @@ final class Client {
         return task
     }
     
-//    // ----------------------------------
-//    //  MARK: - Accounts -
-//    //
-//    @discardableResult
-//    func createNewUser(email: String, password: String, completion: @escaping ) -> <#return type#> {
-//        <#function body#>
-//    }
+    // ----------------------------------
+    //  MARK: - Accounts -
+    //
+    @discardableResult
+    func createNewUser(newEmail: String, newPassword: String) -> Task {
+        
+        let input = Storefront.CustomerCreateInput.create(
+            email:            newEmail,
+            password:         newPassword
+        )
+        
+        let mutation = Storefront.buildMutation { $0
+            .customerCreate(input: input) { $0
+                .customer { $0
+                    .id()
+                    .email()
+                    .firstName()
+                    .lastName()
+                }
+                .userErrors { $0
+                    .field()
+                    .message()
+                }
+            }
+        }
+        let task = self.client.mutateGraphWith(mutation) {response, error in
+            error.debugPrint()
+        }
+        task.resume()
+        return task
+    }
     
     // ----------------------------------
     //  MARK: - Discounts -
