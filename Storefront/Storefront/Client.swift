@@ -178,8 +178,9 @@ final class Client {
 //            }
             
             error.debugPrint()
-            
+           
             if let response = response {
+                print(response.debugDescription)
                 completion(response.customerCreate?.customer)
             } else {
                 print("No Customer created")

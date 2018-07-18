@@ -32,7 +32,7 @@ class SignUpViewController: UIViewController {
                     if customer == nil {
                         print("Failed to create account")
                     } else {
-                        print("Success")
+                        performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
                     }
                 }
             }
