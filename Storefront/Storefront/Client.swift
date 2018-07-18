@@ -171,11 +171,11 @@ final class Client {
         }
         let task = self.client.mutateGraphWith(mutation) {response, error in
             
-            if let error = error, case .invalidQuery(let reasons) = error {
-                reasons.forEach {
-                    print("Error on \($0.line):\($0.column) - \($0.message)")
-                }
-            }
+//            if let error = error, case .invalidQuery(let reasons) = error {
+//                reasons.forEach {
+//                    print("Error on \($0.line):\($0.column) - \($0.message)")
+//                }
+//            }
             
             error.debugPrint()
             
@@ -184,6 +184,36 @@ final class Client {
             } else {
                 print("No Customer created")
             }
+        }
+        task.resume()
+        return task
+    }
+    
+    func loginUser (userEmail: String, userPassword: String) -> Task {
+        
+        let input = Storefront.CustomerAccessTokenCreateInput.create(
+            email: userEmail,
+            password: userPassword
+        )
+        
+        let mutation = Storefront.buildMutation { $0
+            .customerAccessTokenCreate(input: input) { $0
+                .customerAccessToken { $0
+                    .accessToken()
+                    .expiresAt()
+                }
+                .userErrors { $0
+                    .field()
+                    .message()
+                }
+            }
+        }
+        
+        let task = self.client.mutateGraphWith(mutation) {
+            response, error in
+            
+            error.debugPrint()
+            
         }
         task.resume()
         return task
