@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
     }
     
     
-    @IBAction func submitPressed(_ sender: Any) {
+    @IBAction func submitPressed(_ sender: AnyObject) {
         
         if let email = emailTextLabel.text {
             if let password = passwordTextLabel.text {
@@ -32,34 +32,10 @@ class SignUpViewController: UIViewController {
                     if customer == nil {
                         print("Failed to create account")
                     } else {
-                        performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
                     }
                 }
             }
         }
-        
-//        let input = Storefront.CustomerCreateInput.create(
-//            email:            emailTextLabel.text!,
-//            password:         passwordTextLabel.text!,
-//            firstName:        .value("John"),
-//            lastName:         .value("Smith"),
-//            acceptsMarketing: .value(true)
-//        )
-//
-//        let mutation = Storefront.buildMutation { $0
-//            .customerCreate(input: input) { $0
-//                .customer { $0
-//                    .id()
-//                    .email()
-//                    .firstName()
-//                    .lastName()
-//                }
-//                .userErrors { $0
-//                    .field()
-//                    .message()
-//                }
-//            }
-//        }
-        
     }
 }

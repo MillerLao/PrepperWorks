@@ -67,6 +67,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="aD6-1o-4g2" kind="show" identifier="loginToMenu" id="XN6-8t-Vz9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,9 +121,6 @@
                                     <color key="titleColor" red="0.1803921568627451" green="0.078431372549019607" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="menuToCollections" id="9e8-Xe-Oer"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5W-tb-uqK">
                                 <rect key="frame" x="272" y="427" width="48" height="33"/>
@@ -262,6 +262,7 @@
                     <connections>
                         <outlet property="emailTextLabel" destination="bd4-BP-SUK" id="rUU-A2-DdI"/>
                         <outlet property="passwordTextLabel" destination="yEa-oZ-aU3" id="uKD-dJ-Sgg"/>
+                        <segue destination="xwx-Ny-EVJ" kind="show" identifier="signUpToLogin" id="06A-1P-A4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mb-vR-JIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -732,6 +733,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W4u-Bd-sQh"/>
-        <segue reference="9e8-Xe-Oer"/>
+        <segue reference="06A-1P-A4C"/>
     </inferredMetricsTieBreakers>
 </document>
