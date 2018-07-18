@@ -12,7 +12,7 @@
         <!--Login-->
         <scene sceneID="5pk-MQ-cQz">
             <objects>
-                <viewController title="Login" id="xwx-Ny-EVJ" sceneMemberID="viewController">
+                <viewController title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xwx-Ny-EVJ" customClass="LoginViewController" customModule="Storefront" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ht1-Qz-492"/>
                         <viewControllerLayoutGuide type="bottom" id="tvd-Rv-oEa"/>
@@ -68,7 +68,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aD6-1o-4g2" kind="show" identifier="loginToMenu" id="XN6-8t-Vz9"/>
+                                    <action selector="loginSubmitPressed:" destination="xwx-Ny-EVJ" eventType="touchUpInside" id="go8-pM-dCA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,6 +95,11 @@
                             <constraint firstItem="Cba-ar-lRF" firstAttribute="centerY" secondItem="Ieu-JN-w09" secondAttribute="centerY" id="yx6-49-73Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextLabel" destination="Jdb-Df-saQ" id="58h-0R-vo3"/>
+                        <outlet property="passwordTextLabel" destination="Ieu-JN-w09" id="656-wn-bC9"/>
+                        <segue destination="aD6-1o-4g2" kind="show" identifier="loginToMenu" id="2A2-c9-L4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DC9-H6-eA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +108,7 @@
         <!--Menu-->
         <scene sceneID="jrb-Y6-pwb">
             <objects>
-                <viewController title="Menu" id="aD6-1o-4g2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aD6-1o-4g2" customClass="MenuViewController" customModule="Storefront" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DgD-vp-1sh"/>
                         <viewControllerLayoutGuide type="bottom" id="Dma-Jj-tfa"/>
@@ -121,6 +126,9 @@
                                     <color key="titleColor" red="0.1803921568627451" green="0.078431372549019607" blue="0.039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="menuToCollections" id="uWH-Uy-tzl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5W-tb-uqK">
                                 <rect key="frame" x="272" y="427" width="48" height="33"/>
@@ -733,6 +741,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W4u-Bd-sQh"/>
+        <segue reference="uWH-Uy-tzl"/>
         <segue reference="06A-1P-A4C"/>
     </inferredMetricsTieBreakers>
 </document>

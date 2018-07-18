@@ -155,6 +155,8 @@ final class Client {
             password:         newPassword
         )
         
+        let blah = Storefront.CustomerAccessTokenDeletePayloadQuery.self
+        
         let mutation = Storefront.buildMutation { $0
             .customerCreate(input: input) { $0
                 .customer { $0
@@ -180,7 +182,7 @@ final class Client {
             error.debugPrint()
            
             if let response = response {
-                print(response.debugDescription)
+//                print(response.debugDescription)
                 completion(response.customerCreate?.customer)
             } else {
                 print("No Customer created")
@@ -190,7 +192,7 @@ final class Client {
         return task
     }
     
-    func loginUser (userEmail: String, userPassword: String) -> Task {
+    func loginUser (userEmail: String, userPassword: String, completion: @escaping (Storefront.CustomerAccessToken?) -> Void) -> Task {
         
         let input = Storefront.CustomerAccessTokenCreateInput.create(
             email: userEmail,
@@ -214,6 +216,13 @@ final class Client {
             response, error in
             
             error.debugPrint()
+            
+            if let response = response {
+                print(response.debugDescription)
+                completion(response.customerAccessTokenCreate?.customerAccessToken)
+            } else {
+                print("No token created")
+            }
             
         }
         task.resume()
