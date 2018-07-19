@@ -236,6 +236,44 @@
             </objects>
             <point key="canvasLocation" x="1016.8" y="135.38230884557723"/>
         </scene>
+        <!--UserAccount-->
+        <scene sceneID="gla-Gw-MT9">
+            <objects>
+                <viewController storyboardIdentifier="UserAccountViewController" title="UserAccount" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vRn-FA-FYg" customClass="UserAccountViewController" customModule="Storefront" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gnq-MH-RYM"/>
+                        <viewControllerLayoutGuide type="bottom" id="fdc-iE-omB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DlH-3T-B9K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kw-vA-ja1">
+                                <rect key="frame" x="107" y="122" width="160" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-3T-jAM">
+                                <rect key="frame" x="124" y="280" width="127" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="email" destination="SkQ-3T-jAM" id="QqU-Hz-HSc"/>
+                        <outlet property="name" destination="1kw-vA-ja1" id="rSA-Hg-xx4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLF-Pl-34y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725.5999999999999" y="134.48275862068968"/>
+        </scene>
         <!--SIgn Up-->
         <scene sceneID="vl4-MR-JFh">
             <objects>
@@ -814,6 +852,7 @@
         <image name="mountaintint copy" width="284" height="460"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2A2-c9-L4N"/>
         <segue reference="W4u-Bd-sQh"/>
         <segue reference="uWH-Uy-tzl"/>
         <segue reference="06A-1P-A4C"/>

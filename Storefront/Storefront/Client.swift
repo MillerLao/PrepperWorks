@@ -148,14 +148,21 @@ final class Client {
     // ----------------------------------
     //  MARK: - Accounts -
     //
+    
+//    func logoutUser() -> Task {
+//
+//        let query = Storefront.CustomerAccessTokenDeletePayload.self
+//
+//        let task = Storefront.buildQuery(query)
+//
+//    }
+    
     func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?) -> Void) -> Task {
         
         let input = Storefront.CustomerCreateInput.create(
             email:            newEmail,
             password:         newPassword
         )
-        
-//        let blah = Storefront.CustomerAccessTokenDeletePayloadQuery.self
         
         let mutation = Storefront.buildMutation { $0
             .customerCreate(input: input) { $0
@@ -172,12 +179,6 @@ final class Client {
             }
         }
         let task = self.client.mutateGraphWith(mutation) {response, error in
-            
-//            if let error = error, case .invalidQuery(let reasons) = error {
-//                reasons.forEach {
-//                    print("Error on \($0.line):\($0.column) - \($0.message)")
-//                }
-//            }
             
             error.debugPrint()
            
