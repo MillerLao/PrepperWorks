@@ -136,13 +136,11 @@ final class ClientQuery {
 //    //
 //    static func mutationForSignUpUser(_ email: String, password: String) -> Storefront.MutationQuery {
 //        let input = Storefront.CustomerCreateInput.create(
-//            email:            .value("john.smith@gmail.com"),
-//            password:         .value("123456")
-//            
-//            
-//            
+//            email:            .value(email),
+//            password:         .value(password)
+//
 //        )
-//        
+//
 //    }
     
     // ----------------------------------

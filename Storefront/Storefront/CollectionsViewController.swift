@@ -31,6 +31,8 @@ class CollectionsViewController: UIViewController {
 
     @IBOutlet weak var tableView: StorefrontTableView!
     
+    var isMember: Bool = false
+    
     fileprivate var collections: PageableArray<CollectionViewModel>!
     
     // ----------------------------------
@@ -39,12 +41,23 @@ class CollectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         self.configureTableView()
         
-        Client.shared.fetchCollections { collections in
-            if let collections = collections {
-                self.collections = collections
-                self.tableView.reloadData()
+        if isMember == false {
+            Client.shared.fetchCollections { collections in
+                if let collections = collections {
+                    self.collections = collections
+                    self.tableView.reloadData()
+                }
+            }
+        } else {
+            Client.shared.fetchCollectionsMembers { collections in
+                if let collections = collections {
+                    self.collections = collections
+                    self.tableView.reloadData()
+                }
             }
         }
     }

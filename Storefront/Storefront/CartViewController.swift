@@ -44,7 +44,7 @@ class CartViewController: ParallaxViewController {
         
         switch segue.identifier! {
         case "TotalsViewController":
-            self.totalsViewController          = segue.destination as! TotalsViewController
+            self.totalsViewController          = (segue.destination as! TotalsViewController)
             self.totalsViewController.delegate = self
         default:
             break
@@ -222,21 +222,22 @@ extension CartViewController: TotalsControllerDelegate {
              ** discount in the graphql.myshopify.com
              ** store (the test shop).
              */
-            self.promptForDiscountCode { discountCode in
-                if let discountCode = discountCode {
-                    
-                    Client.shared.applyDiscount(discountCode, to: checkout.id) { checkout in
-                        if let checkout = checkout {
-                            completeCreateCheckout(checkout)
-                        } else {
-                            print("Failed to apply discount to checkout")
-                        }
-                    }
-                    
-                } else {
-                    completeCreateCheckout(checkout)
-                }
-            }
+//            self.promptForDiscountCode { discountCode in
+//                if let discountCode = discountCode {
+//
+//                    Client.shared.applyDiscount(discountCode, to: checkout.id) { checkout in
+//                        if let checkout = checkout {
+//                            completeCreateCheckout(checkout)
+//                        } else {
+//                            print("Failed to apply discount to checkout")
+//                        }
+//                    }
+//
+//                } else {
+//                    completeCreateCheckout(checkout)
+//                }
+//            }
+            completeCreateCheckout(checkout)
         }
     }
 }

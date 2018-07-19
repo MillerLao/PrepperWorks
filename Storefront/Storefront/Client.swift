@@ -145,13 +145,89 @@ final class Client {
         return task
     }
     
-//    // ----------------------------------
-//    //  MARK: - Accounts -
-//    //
-//    @discardableResult
-//    func createNewUser(email: String, password: String, completion: @escaping ) -> <#return type#> {
-//        <#function body#>
-//    }
+    // ----------------------------------
+    //  MARK: - Accounts -
+    //
+    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?) -> Void) -> Task {
+        
+        let input = Storefront.CustomerCreateInput.create(
+            email:            newEmail,
+            password:         newPassword
+        )
+        
+//        let blah = Storefront.CustomerAccessTokenDeletePayloadQuery.self
+        
+        let mutation = Storefront.buildMutation { $0
+            .customerCreate(input: input) { $0
+                .customer { $0
+                    .id()
+                    .email()
+                    .firstName()
+                    .lastName()
+                }
+                .userErrors { $0
+                    .field()
+                    .message()
+                }
+            }
+        }
+        let task = self.client.mutateGraphWith(mutation) {response, error in
+            
+//            if let error = error, case .invalidQuery(let reasons) = error {
+//                reasons.forEach {
+//                    print("Error on \($0.line):\($0.column) - \($0.message)")
+//                }
+//            }
+            
+            error.debugPrint()
+           
+            if let response = response {
+//                print(response.debugDescription)
+                completion(response.customerCreate?.customer)
+            } else {
+                print("No Customer created")
+            }
+        }
+        task.resume()
+        return task
+    }
+    
+    func loginUser (userEmail: String, userPassword: String, completion: @escaping (Storefront.CustomerAccessToken?) -> Void) -> Task {
+        
+        let input = Storefront.CustomerAccessTokenCreateInput.create(
+            email: userEmail,
+            password: userPassword
+        )
+        
+        let mutation = Storefront.buildMutation { $0
+            .customerAccessTokenCreate(input: input) { $0
+                .customerAccessToken { $0
+                    .accessToken()
+                    .expiresAt()
+                }
+                .userErrors { $0
+                    .field()
+                    .message()
+                }
+            }
+        }
+        
+        let task = self.client.mutateGraphWith(mutation) {
+            response, error in
+            
+            error.debugPrint()
+            
+            if let response = response {
+                print(response.debugDescription)
+                completion(response.customerAccessTokenCreate?.customerAccessToken)
+            } else {
+                print("No token created")
+            }
+            
+        }
+        task.resume()
+        return task
+    }
     
     // ----------------------------------
     //  MARK: - Discounts -

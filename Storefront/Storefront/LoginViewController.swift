@@ -1,38 +1,36 @@
 //
-//  SignUpViewController.swift
+//  LoginViewController.swift
 //  Storefront
 //
-//  Created by HKP3 Waylon on 7/12/18.
+//  Created by HKP3 Waylon on 7/18/18.
 //  Copyright © 2018 Shopify Inc. All rights reserved.
 //
 
 import UIKit
-import Buy
 
-class SignUpViewController: UIViewController {
-    
+class LoginViewController: UIViewController {
+
     @IBOutlet weak var emailTextLabel: UITextField!
-    
     @IBOutlet weak var passwordTextLabel: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Stuff to do after the view loads
+
+        // Do any additional setup after loading the view.
     }
-    
-    
-    @IBAction func submitPressed(_ sender: AnyObject) {
+
+    @IBAction func loginSubmitPressed(_ sender: Any) {
         
         if let email = emailTextLabel.text {
             if let password = passwordTextLabel.text {
-                Client.shared.createNewUser(newEmail: email, newPassword: password) {
-                    customer in
+                Client.shared.loginUser(userEmail: email, userPassword: password) {
+                    token in
                     
-                    if customer == nil {
-                        print("Failed to create account")
+                    if token != nil {
+                        self.performSegue(withIdentifier: "loginToMenu", sender: self)
                     } else {
-                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
+                        print("Failed to login!")
                     }
                 }
             } else {
@@ -41,5 +39,6 @@ class SignUpViewController: UIViewController {
         } else {
             print("No email entered!")
         }
+        
     }
 }

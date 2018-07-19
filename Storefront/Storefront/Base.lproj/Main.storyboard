@@ -12,7 +12,7 @@
         <!--Login-->
         <scene sceneID="5pk-MQ-cQz">
             <objects>
-                <viewController title="Login" id="xwx-Ny-EVJ" sceneMemberID="viewController">
+                <viewController title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xwx-Ny-EVJ" customClass="LoginViewController" customModule="Storefront" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ht1-Qz-492"/>
                         <viewControllerLayoutGuide type="bottom" id="tvd-Rv-oEa"/>
@@ -59,7 +59,6 @@
                                         </state>
                                         <connections>
                                             <action selector="submitPressed:" destination="Ehw-hK-m2M" eventType="touchUpInside" id="wPE-y9-3E0"/>
-                                            <segue destination="aD6-1o-4g2" kind="show" id="PHa-Z1-fiy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -136,6 +135,9 @@
                             <constraint firstItem="88m-Og-RnM" firstAttribute="centerX" secondItem="SWo-Mh-xMY" secondAttribute="centerX" id="vfO-Eu-q9o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="aD6-1o-4g2" kind="show" identifier="loginToMenu" id="2A2-c9-L4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DC9-H6-eA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +146,7 @@
         <!--Menu-->
         <scene sceneID="jrb-Y6-pwb">
             <objects>
-                <viewController title="Menu" id="aD6-1o-4g2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aD6-1o-4g2" customClass="MenuViewController" customModule="Storefront" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DgD-vp-1sh"/>
                         <viewControllerLayoutGuide type="bottom" id="Dma-Jj-tfa"/>
@@ -166,7 +168,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="menuToCollections" id="9e8-Xe-Oer"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="menuToCollections" id="uWH-Uy-tzl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5W-tb-uqK">
@@ -213,7 +215,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PPANameless" translatesAutoresizingMaskIntoConstraints="NO" id="mJc-ab-ESi">
-                                <rect key="frame" x="62" y="81" width="250" height="250"/>
+                                <rect key="frame" x="87" y="121" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -318,6 +320,7 @@
                     <connections>
                         <outlet property="emailTextLabel" destination="bd4-BP-SUK" id="rUU-A2-DdI"/>
                         <outlet property="passwordTextLabel" destination="yEa-oZ-aU3" id="uKD-dJ-Sgg"/>
+                        <segue destination="xwx-Ny-EVJ" kind="show" identifier="signUpToLogin" id="06A-1P-A4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mb-vR-JIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,8 +814,8 @@
         <image name="mountaintint copy" width="284" height="460"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0KZ-pB-yBY"/>
         <segue reference="W4u-Bd-sQh"/>
-        <segue reference="apV-bA-whp"/>
+        <segue reference="uWH-Uy-tzl"/>
+        <segue reference="06A-1P-A4C"/>
     </inferredMetricsTieBreakers>
 </document>
