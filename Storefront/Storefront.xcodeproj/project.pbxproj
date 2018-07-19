@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64482CAA210131FE0070068B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64482CA9210131FE0070068B /* HomeViewController.swift */; };
 		64493D2A20F7A4990034AB5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D2920F7A4990034AB5D /* SignUpViewController.swift */; };
 		64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */; };
 		64A0180A20FFCABE00685E0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0180920FFCABE00685E0C /* LoginViewController.swift */; };
@@ -168,6 +169,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		64482CA9210131FE0070068B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		64493D2920F7A4990034AB5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMembersViewController.swift; sourceTree = "<group>"; };
 		64A0180920FFCABE00685E0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64482CA3210131E50070068B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				64482CA9210131FE0070068B /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		64493D2020F7A0C40034AB5D /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +436,7 @@
 		9AAFAB781E60BD5800864A17 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64482CA3210131E50070068B /* Home */,
 				64A018122100E4DB00685E0C /* Account */,
 				64493D6620F7F2C90034AB5D /* Menu */,
 				64493D2620F7A0D90034AB5D /* Sign Up */,
@@ -797,6 +808,7 @@
 				9A7E3F6F1E89615E00713740 /* UICollectionView+Touch.swift in Sources */,
 				9ADCC88B1E82FE2900F5B6DD /* TotalsViewController.swift in Sources */,
 				9AB421AF1E93C800005098C4 /* CreditCardViewModel.swift in Sources */,
+				64482CAA210131FE0070068B /* HomeViewController.swift in Sources */,
 				64493D2A20F7A4990034AB5D /* SignUpViewController.swift in Sources */,
 				9A9FFF2E1E8150F100F6DFF7 /* SubtitleButton.swift in Sources */,
 				9AC583D21E81C165005DB319 /* CartNavigationController.swift in Sources */,

@@ -21,6 +21,15 @@ class SignUpViewController: UIViewController {
         //Stuff to do after the view loads
     }
     
+    func signUpFailAlert() {
+        let alert = UIAlertController(title: "Sign Up Failed", message: "Please fill in all fields!", preferredStyle: .alert)
+      
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+        
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func submitPressed(_ sender: AnyObject) {
         
@@ -31,15 +40,18 @@ class SignUpViewController: UIViewController {
                     
                     if customer == nil {
                         print("Failed to create account")
+                        self.signUpFailAlert()
                     } else {
                         self.performSegue(withIdentifier: "signUpToLogin", sender: self)
                     }
                 }
             } else {
                 print("No password entered!")
+                signUpFailAlert()
             }
         } else {
             print("No email entered!")
+            signUpFailAlert()
         }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5HA-7N-vXJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5HA-7N-vXJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="298"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PPANameless" translatesAutoresizingMaskIntoConstraints="NO" id="3Te-Lg-avl">
-                                        <rect key="frame" x="87" y="49" width="200" height="200"/>
+                                        <rect key="frame" x="87.5" y="49" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="Ctq-j7-VNr"/>
                                             <constraint firstAttribute="width" constant="200" id="Wqj-8A-a03"/>
@@ -58,6 +58,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="loginSubmitPressed:" destination="xwx-Ny-EVJ" eventType="touchUpInside" id="NAI-Vs-tbY"/>
                                             <action selector="submitPressed:" destination="Ehw-hK-m2M" eventType="touchUpInside" id="wPE-y9-3E0"/>
                                         </connections>
                                     </button>
@@ -136,6 +137,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextLabel" destination="0Ck-Jj-ORX" id="PvD-n7-JPh"/>
+                        <outlet property="passwordTextLabel" destination="vxn-LW-MJN" id="Z5p-bd-Gng"/>
                         <segue destination="aD6-1o-4g2" kind="show" identifier="loginToMenu" id="2A2-c9-L4N"/>
                     </connections>
                 </viewController>
@@ -591,7 +594,7 @@
         <!--Home-->
         <scene sceneID="Ses-hI-uOy">
             <objects>
-                <viewController id="jFz-Of-2My" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVIewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jFz-Of-2My" customClass="HomeViewController" customModule="Storefront" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yV8-IZ-x8V"/>
                         <viewControllerLayoutGuide type="bottom" id="rGM-Ko-X0u"/>
@@ -600,9 +603,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="landingscreen" translatesAutoresizingMaskIntoConstraints="NO" id="tbP-cE-Bvt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingscreen" translatesAutoresizingMaskIntoConstraints="NO" id="tbP-cE-Bvt" customClass="home">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hV2-mP-t0D" userLabel="bottomContainer">
                                 <rect key="frame" x="0.0" y="517" width="375" height="150"/>
@@ -671,11 +673,11 @@
                                     <constraint firstAttribute="bottom" secondItem="6tj-mG-6N5" secondAttribute="bottom" id="tIE-Bc-gtf"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLj-Cr-p00" userLabel="Top Container">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLj-Cr-p00" userLabel="Top Container" customClass="ImageCell" customModule="Storefront" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="497"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PPANameless" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-i9-TIj">
-                                        <rect key="frame" x="87" y="148.5" width="200" height="200"/>
+                                        <rect key="frame" x="87.5" y="148.5" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="7iW-rd-MZH"/>
                                             <constraint firstAttribute="width" constant="200" id="IUn-BR-v0v"/>
@@ -693,8 +695,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hV2-mP-t0D" firstAttribute="top" secondItem="VLj-Cr-p00" secondAttribute="bottom" id="4x8-6U-gNS"/>
+                            <constraint firstAttribute="trailing" secondItem="tbP-cE-Bvt" secondAttribute="trailing" id="7VZ-yZ-PrQ"/>
                             <constraint firstItem="VLj-Cr-p00" firstAttribute="top" secondItem="yV8-IZ-x8V" secondAttribute="bottom" id="BV2-cH-J9l"/>
+                            <constraint firstItem="tbP-cE-Bvt" firstAttribute="leading" secondItem="kE7-j9-rAz" secondAttribute="leading" id="D04-Ks-c7w"/>
                             <constraint firstItem="hV2-mP-t0D" firstAttribute="leading" secondItem="kE7-j9-rAz" secondAttribute="leading" id="Fll-pK-cub"/>
+                            <constraint firstItem="rGM-Ko-X0u" firstAttribute="top" secondItem="tbP-cE-Bvt" secondAttribute="bottom" id="G63-OS-yG3"/>
+                            <constraint firstItem="tbP-cE-Bvt" firstAttribute="top" secondItem="yV8-IZ-x8V" secondAttribute="bottom" id="M5x-lv-bsJ"/>
                             <constraint firstAttribute="trailing" secondItem="hV2-mP-t0D" secondAttribute="trailing" id="NnF-8k-YJ1"/>
                             <constraint firstItem="VLj-Cr-p00" firstAttribute="leading" secondItem="kE7-j9-rAz" secondAttribute="leading" id="S4l-mR-9oa"/>
                             <constraint firstAttribute="trailing" secondItem="VLj-Cr-p00" secondAttribute="trailing" id="TsB-sL-U36"/>
@@ -855,6 +861,6 @@
         <segue reference="2A2-c9-L4N"/>
         <segue reference="W4u-Bd-sQh"/>
         <segue reference="uWH-Uy-tzl"/>
-        <segue reference="06A-1P-A4C"/>
+        <segue reference="0KZ-pB-yBY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,24 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func loginFailAlert() {
+        let alert = UIAlertController(title: "Login Failed", message: "Email and Password combination invalid", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "loginToMenu" {
+//            let menuVC = segue.destination as! MenuViewController
+//
+//            menuVC.token = ""
+//        }
+//    }
 
     @IBAction func loginSubmitPressed(_ sender: Any) {
         
@@ -31,6 +49,7 @@ class LoginViewController: UIViewController {
                         self.performSegue(withIdentifier: "loginToMenu", sender: self)
                     } else {
                         print("Failed to login!")
+                        self.loginFailAlert()
                     }
                 }
             } else {

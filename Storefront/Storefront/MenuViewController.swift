@@ -9,11 +9,14 @@
 import UIKit
 
 class MenuViewController: UIViewController {
+    
+    var token: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        self.navigationController?.isNavigationBarHidden = true
 
         // Do any additional setup after loading the view.
     }
