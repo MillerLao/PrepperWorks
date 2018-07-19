@@ -47,7 +47,7 @@ class ProductDetailsViewController: ParallaxViewController {
         
         switch segue.identifier! {
         case "ImageViewController":
-            self.imageViewController = segue.destination as! ImageViewController
+            self.imageViewController = (segue.destination as! ImageViewController)
         default:
             break
         }

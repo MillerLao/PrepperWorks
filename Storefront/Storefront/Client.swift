@@ -155,7 +155,7 @@ final class Client {
             password:         newPassword
         )
         
-        let blah = Storefront.CustomerAccessTokenDeletePayloadQuery.self
+//        let blah = Storefront.CustomerAccessTokenDeletePayloadQuery.self
         
         let mutation = Storefront.buildMutation { $0
             .customerCreate(input: input) { $0
