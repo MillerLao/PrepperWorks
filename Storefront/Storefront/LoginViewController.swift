@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Buy
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextLabel: UITextField!
     @IBOutlet weak var passwordTextLabel: UITextField!
     
+    var token: Storefront.CustomerAccessToken? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     func loginFailAlert() {
@@ -30,13 +34,13 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "loginToMenu" {
-//            let menuVC = segue.destination as! MenuViewController
-//
-//            menuVC.token = ""
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginToMenu" {
+            let menuVC = segue.destination as! MenuViewController
+
+            menuVC.token = self.token
+        }
+    }
 
     @IBAction func loginSubmitPressed(_ sender: Any) {
         
@@ -46,6 +50,7 @@ class LoginViewController: UIViewController {
                     token in
                     
                     if token != nil {
+                        self.token = token
                         self.performSegue(withIdentifier: "loginToMenu", sender: self)
                     } else {
                         print("Failed to login!")

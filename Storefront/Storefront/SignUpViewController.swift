@@ -18,7 +18,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Stuff to do after the view loads
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     func signUpFailAlert() {

@@ -13,14 +13,20 @@ class UserAccountViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
     
+    //Temp var to hold user data
+    var tempName: String = ""
+    var tempEmail: String = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        name.text = "The Name"
-        email.text = "The Email"
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        //Set temp data to actual labels to be displayed on screen
+        name.text = tempName
+        email.text = tempEmail
     }
     
 

@@ -149,15 +149,28 @@ final class Client {
     //  MARK: - Accounts -
     //
     
-//    func logoutUser() -> Task {
-//
-//        let query = Storefront.CustomerAccessTokenDeletePayload.self
-//
-//        let task = Storefront.buildQuery(query)
-//
-//    }
+    func getUserData(token: Storefront.CustomerAccessToken, completion: @escaping (String?, String?, String?) -> Void) -> Void {
+        let query = Storefront.buildQuery { $0
+            .customer(customerAccessToken: token.accessToken) { $0
+                .id()
+                .firstName()
+                .lastName()
+                .email()
+            }
+        }
+        let task = self.client.queryGraphWith(query) {
+            query, error in
+            
+            error.debugPrint()
+            
+            if let query = query {
+                completion(query.customer?.firstName, query.customer?.lastName, query.customer?.email)
+            }
+        }
+        task.resume()
+    }
     
-    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?) -> Void) -> Task {
+    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?) -> Void) -> Void {
         
         let input = Storefront.CustomerCreateInput.create(
             email:            newEmail,
@@ -183,17 +196,17 @@ final class Client {
             error.debugPrint()
            
             if let response = response {
-//                print(response.debugDescription)
+                print(response.debugDescription)
                 completion(response.customerCreate?.customer)
             } else {
                 print("No Customer created")
             }
         }
         task.resume()
-        return task
+//        return task
     }
     
-    func loginUser (userEmail: String, userPassword: String, completion: @escaping (Storefront.CustomerAccessToken?) -> Void) -> Task {
+    func loginUser (userEmail: String, userPassword: String, completion: @escaping (Storefront.CustomerAccessToken?) -> Void) -> Void {
         
         let input = Storefront.CustomerAccessTokenCreateInput.create(
             email: userEmail,
@@ -227,7 +240,7 @@ final class Client {
             
         }
         task.resume()
-        return task
+//        return task
     }
     
     // ----------------------------------
