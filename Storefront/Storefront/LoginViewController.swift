@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                     
                     if token != nil {
                         self.token = token
-                        self.performSegue(withIdentifier: "loginToMenu", sender: self)
+//                        self.performSegue(withIdentifier: "loginToMenu", sender: self)
                     } else {
                         print("Failed to login!")
                         self.loginFailAlert()

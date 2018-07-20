@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
                         print("Failed to create account")
                         self.signUpFailAlert()
                     } else {
-                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
+//                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
                     }
                 }
             } else {

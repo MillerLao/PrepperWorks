@@ -18,8 +18,8 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
