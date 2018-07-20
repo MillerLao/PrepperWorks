@@ -42,6 +42,7 @@ class CollectionsViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.isNavigationBarHidden = false
         
         self.configureTableView()
         

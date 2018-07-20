@@ -14,8 +14,8 @@ class UserAccountViewController: UIViewController {
     @IBOutlet weak var email: UILabel!
     
     //Temp var to hold user data
-    var tempName: String = ""
-    var tempEmail: String = ""
+    var tempName: String = "blah"
+    var tempEmail: String = "blah"
     
 
     override func viewDidLoad() {

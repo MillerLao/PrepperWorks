@@ -57,6 +57,7 @@ class MenuViewController: UIViewController {
             }
         }
         performSegue(withIdentifier: "menuToAccount", sender: self)
+        
     }
     
 }
