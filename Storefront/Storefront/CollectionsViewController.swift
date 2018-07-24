@@ -99,6 +99,9 @@ class CollectionsViewController: UIViewController {
 // ----------------------------------
 //  MARK: - Actions -
 //
+
+
+
 extension CollectionsViewController {
     
     @IBAction func cartAction(_ sender: Any) {

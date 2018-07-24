@@ -11,9 +11,10 @@ import Buy
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var emailTextLabel: UITextField!
-    
-    @IBOutlet weak var passwordTextLabel: UITextField!
+    @IBOutlet weak var fNameTextField: UITextField!
+    @IBOutlet weak var lNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -35,8 +36,8 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: AnyObject) {
         
-        if let email = emailTextLabel.text {
-            if let password = passwordTextLabel.text {
+        if let email = emailTextField.text {
+            if let password = passwordTextField.text {
                 Client.shared.createNewUser(newEmail: email, newPassword: password) {
                     customer in
                     

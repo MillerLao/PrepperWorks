@@ -2,25 +2,23 @@
 //  LoginViewController.swift
 //  Storefront
 //
-//  Created by HKP3 Waylon on 7/18/18.
+//  Created by HKP3 Waylon on 7/24/18.
 //  Copyright © 2018 Shopify Inc. All rights reserved.
 //
 
 import UIKit
 import Buy
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emailTextLabel: UITextField!
-    @IBOutlet weak var passwordTextLabel: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
+
     var cameFrom = ""
     var token: Storefront.CustomerAccessToken? = nil
-    
-    func testy() {
-        
-    }
-    
+    let keychain = KeychainSwift()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,37 +50,38 @@ class LoginViewController: UIViewController {
                     let accountVC = segue.destination as! UserAccountViewController
                     
                     accountVC.tempEmail = email!
-                    accountVC.tempName = "\(String(describing: firstName)) \(String(describing: lastName))"
+                    if let firstName = firstName {
+                        if let lastName = lastName {
+                            accountVC.tempName = "\(firstName)) \(lastName))"
+                        } else {
+                            accountVC.tempName = "None"
+                        }
+                    } else {
+                        accountVC.tempName = "None"
+                    }
                 }
             }
         }
     }
     
-    @IBAction func loginSubmitPressed(_ sender: Any) {
-        
-        if let email = emailTextLabel.text {
-            if let password = passwordTextLabel.text {
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        if let email = emailTextField.text {
+            if let password = passwordTextField.text {
                 Client.shared.loginUser(userEmail: email, userPassword: password) {
                     token in
                     
-                    if token != nil {
+                    if let token = token {
                         self.token = token
+                        self.keychain.set(token.accessToken, forKey: "accessToken")
                         if self.cameFrom == "videos" {
                             self.performSegue(withIdentifier: "loginToVideos", sender: self)
                         } else {
                             self.performSegue(withIdentifier: "loginToAccount", sender: self)
                         }
-                    } else {
-                        print("Failed to login!")
-                        self.loginFailAlert()
                     }
                 }
-            } else {
-                print("No password entered!")
             }
-        } else {
-            print("No email entered!")
         }
-        
     }
+    
 }

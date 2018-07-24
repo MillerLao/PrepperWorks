@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		64493D2A20F7A4990034AB5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D2920F7A4990034AB5D /* SignUpViewController.swift */; };
 		64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */; };
-		64A0180A20FFCABE00685E0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0180920FFCABE00685E0C /* LoginViewController.swift */; };
+		646062C02107CFFE00C8A257 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646062BF2107CFFE00C8A257 /* LoginViewController.swift */; };
 		64A018162101076D00685E0C /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A018152101076D00685E0C /* UserAccountViewController.swift */; };
 		64DDEDA3210762B600D752B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDEDA2210762B600D752B8 /* MenuViewController.swift */; };
 		64DDEDA62107776B00D752B8 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDEDA52107776B00D752B8 /* VideosViewController.swift */; };
@@ -172,7 +172,7 @@
 /* Begin PBXFileReference section */
 		64493D2920F7A4990034AB5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMembersViewController.swift; sourceTree = "<group>"; };
-		64A0180920FFCABE00685E0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		646062BF2107CFFE00C8A257 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		64A018152101076D00685E0C /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
 		64DDEDA2210762B600D752B8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		64DDEDA52107776B00D752B8 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 		64493D2020F7A0C40034AB5D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				64A0180920FFCABE00685E0C /* LoginViewController.swift */,
+				646062BF2107CFFE00C8A257 /* LoginViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -831,7 +831,6 @@
 				9AAFAB941E60D2D000864A17 /* NSObject+Name.swift in Sources */,
 				9AB421AB1E93C781005098C4 /* PaymentViewModel.swift in Sources */,
 				9AEF61CC1E606EFE0067FA90 /* Fragment+ProductConnectionQuery.swift in Sources */,
-				64A0180A20FFCABE00685E0C /* LoginViewController.swift in Sources */,
 				9A4069D61E8EEDC9000254CD /* ShippingRateViewModel.swift in Sources */,
 				9A9FFF411E8171E900F6DFF7 /* SeparatorView.swift in Sources */,
 				9AC583CF1E81BF96005DB319 /* CartCell.swift in Sources */,
@@ -851,6 +850,7 @@
 				9A27C32D1E9120AD00218EE8 /* CheckoutViewModel+PayCheckout.swift in Sources */,
 				9A9FFF271E80172C00F6DFF7 /* ProductDetailsCell.swift in Sources */,
 				9AC583C91E81BEF8005DB319 /* CartViewController.swift in Sources */,
+				646062C02107CFFE00C8A257 /* LoginViewController.swift in Sources */,
 				9A21F29A1E7AD4FD00E00F4B /* ParallaxViewController.swift in Sources */,
 				9A9FFF1C1E7FF3A800F6DFF7 /* ImageViewModel.swift in Sources */,
 				9A27C3201E8FD99200218EE8 /* CheckoutViewModel.swift in Sources */,

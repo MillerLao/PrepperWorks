@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class UserAccountViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
+    
+    let keychain = KeychainSwift()
     
     //Temp var to hold user data
     var tempName: String = ""
@@ -21,12 +24,14 @@ class UserAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(keychain.get("accessToken"))
+        
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         //Set temp data to actual labels to be displayed on screen
-        name.text = tempName
-        email.text = tempEmail
+        name.text = "tempName"
+        email.text = "tempEmail"
     }
     
     override func viewWillAppear(_ animated: Bool) {
