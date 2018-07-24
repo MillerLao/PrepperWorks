@@ -17,6 +17,10 @@ class LoginViewController: UIViewController {
     var cameFrom = ""
     var token: Storefront.CustomerAccessToken? = nil
     
+    func testy() {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
