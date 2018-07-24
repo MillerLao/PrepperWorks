@@ -2,62 +2,56 @@
 //  MenuViewController.swift
 //  Storefront
 //
-//  Created by HKP3 Waylon on 7/18/18.
+//  Created by HKP3 Waylon on 7/24/18.
 //  Copyright © 2018 Shopify Inc. All rights reserved.
 //
 
 import UIKit
-import Buy
 
 class MenuViewController: UIViewController {
     
-    var token: Storefront.CustomerAccessToken? = nil
-    var name: String = ""
-    var email: String = ""
+    var isLoggedIn:Bool = false
+    var sender:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
-//        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "menuToCollections" {
             let collectionsVC = segue.destination as! CollectionsViewController
             
-            collectionsVC.isMember = true
-        } else if segue.identifier == "menuToAccount" {
-            let accountVC = segue.destination as! UserAccountViewController
+            if isLoggedIn {
+                collectionsVC.isMember = true
+            }
+        } else if segue.identifier == "menuToLogin" {
+            let loginVC = segue.destination as! LoginViewController
             
-            accountVC.tempName = self.name
-            accountVC.tempEmail = self.email
+            loginVC.cameFrom = self.sender
         }
     }
     
+    @IBAction func collectionsButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "menuToCollections", sender: self)
+    }
+    
+    
+    @IBAction func videoButtonPressed(_ sender: Any) {
+        if isLoggedIn {
+            performSegue(withIdentifier: "menuToVideos", sender: self)
+        } else {
+            self.sender = "videos"
+            performSegue(withIdentifier: "menuToLogin", sender: self)
+        }
+    }
     
     @IBAction func accountButtonPressed(_ sender: Any) {
-        
-        if let token = token {
-            Client.shared.getUserData(token: token) {
-                firstName, lastName, email in
-                
-                if let fname = firstName {
-                    if let lname = lastName {
-                        self.name = "\(fname)  \(lname)"
-                        print(self.name)
-                    }
-                } else {
-                    self.name = "No Name"
-                    print(self.name)
-                }
-                if let email = email {
-                    self.email = email
-                }
-            }
+        if isLoggedIn {
+            performSegue(withIdentifier: "menuToAccount", sender: self)
+        } else {
+            self.sender = "account"
+            performSegue(withIdentifier: "menuToLogin", sender: self)
         }
-//        performSegue(withIdentifier: "menuToAccount", sender: self)
-        
     }
     
 }

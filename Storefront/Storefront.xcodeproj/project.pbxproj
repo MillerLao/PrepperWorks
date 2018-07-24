@@ -10,8 +10,9 @@
 		64493D2A20F7A4990034AB5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D2920F7A4990034AB5D /* SignUpViewController.swift */; };
 		64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */; };
 		64A0180A20FFCABE00685E0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0180920FFCABE00685E0C /* LoginViewController.swift */; };
-		64A0181120FFD08000685E0C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A0181020FFD08000685E0C /* MenuViewController.swift */; };
 		64A018162101076D00685E0C /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A018152101076D00685E0C /* UserAccountViewController.swift */; };
+		64DDEDA3210762B600D752B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDEDA2210762B600D752B8 /* MenuViewController.swift */; };
+		64DDEDA62107776B00D752B8 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDEDA52107776B00D752B8 /* VideosViewController.swift */; };
 		9A0ED6861E83F120008C605E /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ED6851E83F120008C605E /* Serializable.swift */; };
 		9A0ED68A1E83FF2D008C605E /* GraphQL+Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ED6891E83FF2D008C605E /* GraphQL+Serializable.swift */; };
 		9A0ED6911E842467008C605E /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ED6901E842467008C605E /* CartButton.swift */; };
@@ -171,8 +172,9 @@
 		64493D2920F7A4990034AB5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMembersViewController.swift; sourceTree = "<group>"; };
 		64A0180920FFCABE00685E0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		64A0181020FFD08000685E0C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		64A018152101076D00685E0C /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
+		64DDEDA2210762B600D752B8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		64DDEDA52107776B00D752B8 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		9A0ED6851E83F120008C605E /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		9A0ED6891E83FF2D008C605E /* GraphQL+Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GraphQL+Serializable.swift"; sourceTree = "<group>"; };
 		9A0ED6901E842467008C605E /* CartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
@@ -277,7 +279,7 @@
 		64493D6620F7F2C90034AB5D /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				64A0181020FFD08000685E0C /* MenuViewController.swift */,
+				64DDEDA2210762B600D752B8 /* MenuViewController.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -288,6 +290,14 @@
 				64A018152101076D00685E0C /* UserAccountViewController.swift */,
 			);
 			name = Account;
+			sourceTree = "<group>";
+		};
+		64DDEDA42107775500D752B8 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				64DDEDA52107776B00D752B8 /* VideosViewController.swift */,
+			);
+			name = Videos;
 			sourceTree = "<group>";
 		};
 		9A0ED6881E83FF1B008C605E /* Extensions */ = {
@@ -426,6 +436,7 @@
 		9AAFAB781E60BD5800864A17 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64DDEDA42107775500D752B8 /* Videos */,
 				64A018122100E4DB00685E0C /* Account */,
 				64493D6620F7F2C90034AB5D /* Menu */,
 				64493D2620F7A0D90034AB5D /* Sign Up */,
@@ -745,7 +756,7 @@
 				9AAFAB7E1E60BE6500864A17 /* ViewModeling.swift in Sources */,
 				9A27C32A1E8FDF7C00218EE8 /* Fragment+CheckoutQuery.swift in Sources */,
 				9AAFAB891E60C17100864A17 /* ProductCell.swift in Sources */,
-				64A0181120FFD08000685E0C /* MenuViewController.swift in Sources */,
+				64DDEDA3210762B600D752B8 /* MenuViewController.swift in Sources */,
 				9A9FFF131E79CCC800F6DFF7 /* PaginatedArray.swift in Sources */,
 				9A9FFEFD1E78432F00F6DFF7 /* Currency.swift in Sources */,
 				9A9FFF111E79C0AD00F6DFF7 /* Fragment+VariantConnectionQuery.swift in Sources */,
@@ -768,6 +779,7 @@
 				9A9FFF411E8171E900F6DFF7 /* SeparatorView.swift in Sources */,
 				9AC583CF1E81BF96005DB319 /* CartCell.swift in Sources */,
 				9AAFAB8F1E60C6AC00864A17 /* UIImageView+Remote.swift in Sources */,
+				64DDEDA62107776B00D752B8 /* VideosViewController.swift in Sources */,
 				9AFA3B7D1E6DB7110056C5AA /* ProductsViewController.swift in Sources */,
 				9A0ED6861E83F120008C605E /* Serializable.swift in Sources */,
 				64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */,

@@ -14,8 +14,8 @@ class UserAccountViewController: UIViewController {
     @IBOutlet weak var email: UILabel!
     
     //Temp var to hold user data
-    var tempName: String = "blah"
-    var tempEmail: String = "blah"
+    var tempName: String = ""
+    var tempEmail: String = ""
     
 
     override func viewDidLoad() {
@@ -29,15 +29,23 @@ class UserAccountViewController: UIViewController {
         email.text = tempEmail
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = false
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "accountToMenu" {
+            let menuVC = segue.destination as! MenuViewController
+            
+            menuVC.isLoggedIn = true
+        }
+    }
+
+    @IBAction func menuPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "accountToMenu", sender: self)
+        
+    }
+    
 
 }
