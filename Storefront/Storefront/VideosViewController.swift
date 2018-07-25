@@ -11,10 +11,16 @@ import YouTubePlayer
 
 class VideosViewController: UIViewController {
     
-    @IBOutlet var videoPlayer: YouTubePlayerView!
+    @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        videoPlayer.loadVideoID("WDkg3h8PCVU")
+        print("The duration is:")
+        print(videoPlayer.getDuration())
+//        let myVideoURL = NSURL(string: "youtu.be/WDkg3h8PCVU")
+//        videoPlayer.loadVideoURL(myVideoURL! as URL)
 
         // Do any additional setup after loading the view.
     }

@@ -36,27 +36,19 @@ class SignUpViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: AnyObject) {
         
-        if let email = emailTextField.text {
-            if let password = passwordTextField.text {
-                Client.shared.createNewUser(newEmail: email, newPassword: password) {
-                    customer, errorMessage in
-                    
-                    if customer == nil {
-                        if let errMsg = errorMessage {
-                            print("Failed to create account")
-                            self.signUpFailAlert(errorMsg: errMsg)
-                        }
-                    } else {
-                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
+        if let email = emailTextField.text, let password = passwordTextField.text, let firstName = fNameTextField.text, let lastName = lNameTextField.text {
+            Client.shared.createNewUser(newEmail: email, newPassword: password, newFirstName: firstName, newLastName: lastName) {
+                customer, errorMessage in
+                
+                if customer == nil {
+                    if let errMsg = errorMessage {
+                        print("Failed to create account")
+                        self.signUpFailAlert(errorMsg: errMsg)
                     }
+                } else {
+                    self.performSegue(withIdentifier: "signUpToLogin", sender: self)
                 }
-            } else {
-                print("No password entered!")
-//                signUpFailAlert()
             }
-        } else {
-            print("No email entered!")
-//            signUpFailAlert()
         }
     }
 }

@@ -172,7 +172,7 @@ final class Client {
         task.resume()
     }
     
-    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?, String?) -> Void) -> Void {
+    func createNewUser(newEmail: String, newPassword: String, newFirstName: String, newLastName: String, completion: @escaping (Storefront.Customer?, String?) -> Void) -> Void {
         
         let input = Storefront.CustomerCreateInput.create(
             email:            newEmail,
