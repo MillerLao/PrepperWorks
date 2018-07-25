@@ -43,13 +43,16 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginToAccount" {
+//            keychain.get("blahblah") gives a nil
             if let token = token {
-                Client.shared.getUserData(token: token) {
+                Client.shared.getUserData(token: token.accessToken) {
                     firstName, lastName, email in
-                    
+            
                     let accountVC = segue.destination as! UserAccountViewController
                     
-                    accountVC.tempEmail = email!
+                    if let email = email {
+                        accountVC.tempEmail = email
+                    }
                     if let firstName = firstName {
                         if let lastName = lastName {
                             accountVC.tempName = "\(firstName)) \(lastName))"
@@ -78,6 +81,8 @@ class LoginViewController: UIViewController {
                         } else {
                             self.performSegue(withIdentifier: "loginToAccount", sender: self)
                         }
+                    } else {
+                        self.loginFailAlert()
                     }
                 }
             }

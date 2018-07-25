@@ -251,3 +251,12 @@ extension CollectionsViewController: UITableViewDelegate {
         self.navigationController!.show(productsController, sender: self)
     }
 }
+
+
+// ----------------------------------
+//  MARK: - Unwind Segue -
+//
+//
+//@IBAction func unwindToCollections(unwindSegue: UIStoryboardSegue) {
+//    
+//}

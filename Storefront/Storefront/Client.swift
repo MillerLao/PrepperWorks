@@ -149,13 +149,15 @@ final class Client {
     //  MARK: - Accounts -
     //
     
-    func getUserData(token: Storefront.CustomerAccessToken, completion: @escaping (String?, String?, String?) -> Void) -> Void {
+    func getUserData(token: String, completion: @escaping (String?, String?, String?) -> Void) -> Void {
         let query = Storefront.buildQuery { $0
-            .customer(customerAccessToken: token.accessToken) { $0
+            .customer(customerAccessToken: token) { $0
+                
                 .id()
                 .firstName()
                 .lastName()
                 .email()
+                
             }
         }
         let task = self.client.queryGraphWith(query) {
@@ -170,7 +172,7 @@ final class Client {
         task.resume()
     }
     
-    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?) -> Void) -> Void {
+    func createNewUser(newEmail: String, newPassword: String, completion: @escaping (Storefront.Customer?, String?) -> Void) -> Void {
         
         let input = Storefront.CustomerCreateInput.create(
             email:            newEmail,
@@ -194,10 +196,15 @@ final class Client {
         let task = self.client.mutateGraphWith(mutation) {response, error in
             
             error.debugPrint()
+            
            
             if let response = response {
                 print(response.debugDescription)
-                completion(response.customerCreate?.customer)
+                if (response.customerCreate?.userErrors.isEmpty)! {
+                    completion(response.customerCreate?.customer, "")
+                } else {
+                    completion(response.customerCreate?.customer, response.customerCreate?.userErrors[0].message)
+                }
             } else {
                 print("No Customer created")
             }

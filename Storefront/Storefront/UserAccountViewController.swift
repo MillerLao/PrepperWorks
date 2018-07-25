@@ -24,14 +24,14 @@ class UserAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(keychain.get("accessToken"))
+//        print(keychain.get("accessToken"))
         
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         //Set temp data to actual labels to be displayed on screen
-        name.text = "tempName"
-        email.text = "tempEmail"
+        name.text = tempName
+        email.text = tempEmail
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -24,8 +24,8 @@ class SignUpViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
-    func signUpFailAlert() {
-        let alert = UIAlertController(title: "Sign Up Failed", message: "Please fill in all fields!", preferredStyle: .alert)
+    func signUpFailAlert(errorMsg: String) {
+        let alert = UIAlertController(title: "Sign Up Failed", message: errorMsg, preferredStyle: .alert)
       
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
         
@@ -39,22 +39,24 @@ class SignUpViewController: UIViewController {
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
                 Client.shared.createNewUser(newEmail: email, newPassword: password) {
-                    customer in
+                    customer, errorMessage in
                     
                     if customer == nil {
-                        print("Failed to create account")
-                        self.signUpFailAlert()
+                        if let errMsg = errorMessage {
+                            print("Failed to create account")
+                            self.signUpFailAlert(errorMsg: errMsg)
+                        }
                     } else {
-//                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
+                        self.performSegue(withIdentifier: "signUpToLogin", sender: self)
                     }
                 }
             } else {
                 print("No password entered!")
-                signUpFailAlert()
+//                signUpFailAlert()
             }
         } else {
             print("No email entered!")
-            signUpFailAlert()
+//            signUpFailAlert()
         }
     }
 }
