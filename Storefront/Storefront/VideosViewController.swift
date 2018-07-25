@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import YouTubePlayer
 
 class VideosViewController: UIViewController {
+    
+    @IBOutlet var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
