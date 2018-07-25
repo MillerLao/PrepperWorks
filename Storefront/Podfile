@@ -7,4 +7,5 @@ target 'Storefront' do
 
   # Pods for Storefront
     pod 'KeychainSwift', '~> 11.0'
+    pod 'YouTubePlayer'
 end
