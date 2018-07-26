@@ -9,8 +9,7 @@
 import UIKit
 import YouTubePlayer
 
-class VideosViewController: UIViewController
-//, UITableViewDelegate, UITableViewDataSource
+class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
     @IBOutlet weak var videoTableView: UITableView!
@@ -20,8 +19,11 @@ class VideosViewController: UIViewController
         super.viewDidLoad()
         
         //Set delegates for TableView
-//        videoTableView.delegate = self
-//        videoTableView.dataSource = self
+        videoTableView.delegate = self
+        videoTableView.dataSource = self
+        
+        //Register .xib file
+        videoTableView.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "videoCell")
         
         videoPlayer.loadVideoID("pFy5kaCteGE")
 //        let myVideoURL = NSURL(string: "youtu.be/WDkg3h8PCVU")
@@ -43,11 +45,16 @@ class VideosViewController: UIViewController
     // ----------------------------------
     //  MARK: - Accounts -
     //
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoTableViewCell
+        
+        let videoArray = ["pFy5kaCteGE", "bARlff_VCLY", "4FO0DQcI860"]
+        cell.videoPlayer.loadVideoID(videoArray[indexPath.row])
+        
+        return cell
+    }
 }
