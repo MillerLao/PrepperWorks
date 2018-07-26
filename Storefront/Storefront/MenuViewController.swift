@@ -54,18 +54,17 @@ class MenuViewController: UIViewController {
                 Client.shared.getUserData(token: accessToken) {
                     fName, lName, email in
                     
-                    
                     if let email = email {
                         accountVC.tempEmail = email
                     }
                     if let firstName = fName {
                         if let lastName = lName {
-                            accountVC.tempName = "\(firstName)) \(lastName))"
+                            accountVC.tempName = "\(firstName) \(lastName)"
                         } else {
-                            accountVC.tempName = "None"
+                            accountVC.tempName = "\(firstName)"
                         }
                     } else {
-                        accountVC.tempName = "None"
+                        accountVC.tempName = ""
                     }
                 }
             }

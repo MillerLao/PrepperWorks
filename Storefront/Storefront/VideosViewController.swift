@@ -9,20 +9,23 @@
 import UIKit
 import YouTubePlayer
 
-class VideosViewController: UIViewController {
+class VideosViewController: UIViewController
+//, UITableViewDelegate, UITableViewDataSource
+{
     
+    @IBOutlet weak var videoTableView: UITableView!
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        videoPlayer.loadVideoID("WDkg3h8PCVU")
-        print("The duration is:")
-        print(videoPlayer.getDuration())
+        //Set delegates for TableView
+//        videoTableView.delegate = self
+//        videoTableView.dataSource = self
+        
+        videoPlayer.loadVideoID("pFy5kaCteGE")
 //        let myVideoURL = NSURL(string: "youtu.be/WDkg3h8PCVU")
 //        videoPlayer.loadVideoURL(myVideoURL! as URL)
-
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -36,6 +39,15 @@ class VideosViewController: UIViewController {
     @IBAction func menuPressed(_ sender: Any) {
         performSegue(withIdentifier: "videosToMenu", sender: self)
     }
-
-
+    
+    // ----------------------------------
+    //  MARK: - Accounts -
+    //
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
 }

@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
     @IBAction func submitPressed(_ sender: AnyObject) {
         
         if let email = emailTextField.text, let password = passwordTextField.text, let firstName = fNameTextField.text, let lastName = lNameTextField.text {
-            Client.shared.createNewUser(newEmail: email, newPassword: password, newFirstName: firstName, newLastName: lastName) {
+            Client.shared.createNewUserFull(newEmail: email, newPassword: password, newFirstName: firstName, newLastName: lastName) {
                 customer, errorMessage in
                 
                 if customer == nil {

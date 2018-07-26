@@ -213,6 +213,57 @@ final class Client {
 //        return task
     }
     
+    func createNewUserFull(newEmail: String, newPassword: String, newFirstName: String, newLastName: String, completion: @escaping (Storefront.Customer?, String?) -> Void) -> Void {
+        
+//        let phoneInput = Storefront.CustomerUpdateInput(
+//            phone: .value("+16471234567")
+//        )
+        
+        let input = Storefront.CustomerCreateInput.create(
+            email:            newEmail,
+            password:         newPassword,
+            firstName:        .value(newFirstName),
+            lastName:         .value(newLastName),
+            phone:            .value(nil),
+            acceptsMarketing: .value(false)
+        )
+        
+        let mutation = Storefront.buildMutation { $0
+            .customerCreate(input: input) { $0
+                .customer { $0
+                    .id()
+                    .email()
+                    .firstName()
+                    .lastName()
+                    .phone()
+                    .acceptsMarketing()
+                }
+                .userErrors { $0
+                    .field()
+                    .message()
+                }
+            }
+        }
+        let task = self.client.mutateGraphWith(mutation) {response, error in
+            
+            error.debugPrint()
+            
+            
+            if let response = response {
+                print(response.debugDescription)
+                if (response.customerCreate?.userErrors.isEmpty)! {
+                    completion(response.customerCreate?.customer, "")
+                } else {
+                    completion(response.customerCreate?.customer, response.customerCreate?.userErrors[0].message)
+                }
+            } else {
+                print("No Customer created")
+            }
+        }
+        task.resume()
+        //        return task
+    }
+    
     func loginUser (userEmail: String, userPassword: String, completion: @escaping (Storefront.CustomerAccessToken?) -> Void) -> Void {
         
         let input = Storefront.CustomerAccessTokenCreateInput.create(

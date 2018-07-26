@@ -17,18 +17,13 @@ class LoginViewController: UIViewController {
     
 
     var cameFrom = ""
-    var token: Storefront.CustomerAccessToken? = nil
     let keychain = KeychainSwift()
+    
+    var email: String = ""
+    var name: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        //        self.navigationController?.isNavigationBarHidden = false
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //        self.navigationController?.navigationBar.isHidden = false
     }
     
     func loginFailAlert() {
@@ -43,27 +38,9 @@ class LoginViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginToAccount" {
-//            keychain.get("blahblah") gives a nil
-            if let token = token {
-                Client.shared.getUserData(token: token.accessToken) {
-                    firstName, lastName, email in
-            
-                    let accountVC = segue.destination as! UserAccountViewController
-                    
-                    if let email = email {
-                        accountVC.tempEmail = email
-                    }
-                    if let firstName = firstName {
-                        if let lastName = lastName {
-                            accountVC.tempName = "\(firstName)) \(lastName))"
-                        } else {
-                            accountVC.tempName = "None"
-                        }
-                    } else {
-                        accountVC.tempName = "None"
-                    }
-                }
-            }
+            let accountVC = segue.destination as! UserAccountViewController
+            accountVC.tempName = self.name
+            accountVC.tempEmail = self.email
         }
     }
     
@@ -74,12 +51,27 @@ class LoginViewController: UIViewController {
                     token in
                     
                     if let token = token {
-                        self.token = token
                         self.keychain.set(token.accessToken, forKey: "accessToken")
                         if self.cameFrom == "videos" {
                             self.performSegue(withIdentifier: "loginToVideos", sender: self)
                         } else {
-                            self.performSegue(withIdentifier: "loginToAccount", sender: self)
+                            Client.shared.getUserData(token: token.accessToken) {
+                                fName, lName, email in
+                                
+                                if let email = email {
+                                    self.email = email
+                                }
+                                if let firstName = fName {
+                                    if let lastName = lName {
+                                        self.name = "\(firstName) \(lastName)"
+                                    } else {
+                                        self.name = "\(firstName)"
+                                    }
+                                } else {
+                                    self.name = ""
+                                }
+                                self.performSegue(withIdentifier: "loginToAccount", sender: self)
+                            }
                         }
                     } else {
                         self.loginFailAlert()

@@ -17,17 +17,12 @@ class UserAccountViewController: UIViewController {
     let keychain = KeychainSwift()
     
     //Temp var to hold user data
-    var tempName: String = ""
-    var tempEmail: String = ""
+    var tempName: String = "blah"
+    var tempEmail: String = "blah"
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        print(keychain.get("accessToken"))
-        
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         //Set temp data to actual labels to be displayed on screen
         name.text = tempName
@@ -35,7 +30,8 @@ class UserAccountViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.isHidden = false
+        name.text = tempName
+        email.text = tempEmail
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,5 +48,4 @@ class UserAccountViewController: UIViewController {
         
     }
     
-
 }
