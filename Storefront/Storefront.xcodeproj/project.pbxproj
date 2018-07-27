@@ -10,6 +10,8 @@
 		64493D2A20F7A4990034AB5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D2920F7A4990034AB5D /* SignUpViewController.swift */; };
 		64493D6F20F814B30034AB5D /* CollectionsMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */; };
 		646062C02107CFFE00C8A257 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646062BF2107CFFE00C8A257 /* LoginViewController.swift */; };
+		646062E1210BBD3000C8A257 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646062DF210BBD3000C8A257 /* VideoTableViewCell.swift */; };
+		646062E2210BBD3000C8A257 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646062E0210BBD3000C8A257 /* VideoTableViewCell.xib */; };
 		64A018162101076D00685E0C /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A018152101076D00685E0C /* UserAccountViewController.swift */; };
 		64DDEDA3210762B600D752B8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDEDA2210762B600D752B8 /* MenuViewController.swift */; };
 		64DDEDA62107776B00D752B8 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DDEDA52107776B00D752B8 /* VideosViewController.swift */; };
@@ -173,6 +175,8 @@
 		64493D2920F7A4990034AB5D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		64493D6E20F814B30034AB5D /* CollectionsMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsMembersViewController.swift; sourceTree = "<group>"; };
 		646062BF2107CFFE00C8A257 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		646062DF210BBD3000C8A257 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		646062E0210BBD3000C8A257 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		64A018152101076D00685E0C /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
 		64DDEDA2210762B600D752B8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		64DDEDA52107776B00D752B8 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 		646062C5210A472000C8A257 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				646062DF210BBD3000C8A257 /* VideoTableViewCell.swift */,
+				646062E0210BBD3000C8A257 /* VideoTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -765,6 +771,7 @@
 				9A9FFF231E800D9600F6DFF7 /* ProductHeaderCell.xib in Resources */,
 				9AAFAB841E60BF4400864A17 /* CollectionCell.xib in Resources */,
 				9AC583D01E81BF96005DB319 /* CartCell.xib in Resources */,
+				646062E2210BBD3000C8A257 /* VideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +837,7 @@
 				9A27C32F1E91218100218EE8 /* AddressViewModel+PayAddress.swift in Sources */,
 				9AAFAB921E60D11000864A17 /* StorefrontCollectionView.swift in Sources */,
 				9A9FFF4C1E81B61200F6DFF7 /* CartItem.swift in Sources */,
+				646062E1210BBD3000C8A257 /* VideoTableViewCell.swift in Sources */,
 				9A15B73A1E64627A0078E7C5 /* StorefrontTableView.swift in Sources */,
 				9A21F29F1E7EC8AE00E00F4B /* ImageViewController.swift in Sources */,
 				9AAFAB8C1E60C3C700864A17 /* ViewModel.swift in Sources */,
