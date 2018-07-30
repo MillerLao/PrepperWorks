@@ -1,20 +1,24 @@
 PODS:
   - KeychainSwift (11.0.0)
+  - SVProgressHUD (2.2.5)
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
   - KeychainSwift (~> 11.0)
+  - SVProgressHUD (~> 2.2)
   - YouTubePlayer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - KeychainSwift
+    - SVProgressHUD
     - YouTubePlayer
 
 SPEC CHECKSUMS:
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: e2459092212e9e55fb8c8cf0970d4fb942b5813b
+PODFILE CHECKSUM: 7b104c386d8a90b95d573a06eba98791efa7c9df
 
 COCOAPODS: 1.5.3

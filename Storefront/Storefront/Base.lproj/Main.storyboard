@@ -21,13 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m9R-9F-aWi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m9R-9F-aWi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Z6-kE-cfQ" firstAttribute="top" secondItem="m9R-9F-aWi" secondAttribute="bottom" id="TkJ-Um-Cj6"/>
+                            <constraint firstAttribute="trailing" secondItem="m9R-9F-aWi" secondAttribute="trailing" id="Y4u-0f-xeL"/>
+                            <constraint firstItem="m9R-9F-aWi" firstAttribute="top" secondItem="8aK-qZ-2F5" secondAttribute="top" id="ZeJ-DK-I9e"/>
+                            <constraint firstItem="m9R-9F-aWi" firstAttribute="leading" secondItem="8aK-qZ-2F5" secondAttribute="leading" id="kYB-CG-kWX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Videos" id="U1C-7a-5PF">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="vfX-Zq-QYL">
@@ -923,9 +928,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oXJ-cr-giP"/>
-        <segue reference="ucb-2H-Q0e"/>
+        <segue reference="wax-wj-bKU"/>
         <segue reference="10P-5g-iEu"/>
-        <segue reference="E3z-rC-Mxf"/>
-        <segue reference="Jwf-L1-Euq"/>
+        <segue reference="yss-cY-spf"/>
+        <segue reference="tcU-RB-HCO"/>
     </inferredMetricsTieBreakers>
 </document>
