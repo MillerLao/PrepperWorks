@@ -41,11 +41,5 @@ class UserAccountViewController: UIViewController {
             menuVC.isLoggedIn = true
         }
     }
-
-    @IBAction func menuPressed(_ sender: Any) {
-        
-        performSegue(withIdentifier: "accountToMenu", sender: self)
-        
-    }
     
 }

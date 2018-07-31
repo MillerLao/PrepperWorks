@@ -32,10 +32,6 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    @IBAction func menuPressed(_ sender: Any) {
-        performSegue(withIdentifier: "videosToMenu", sender: self)
-    }
-    
     // ----------------------------------
     //  MARK: - TableView Protocols -
     //
