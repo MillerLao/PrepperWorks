@@ -43,6 +43,7 @@ class VideosViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoTableViewCell
         
         cell.videoPlayer.loadVideoID(videoList[indexPath.row])
+        cell.reloadInputViews() //prevents crashing on cell reuse
         return cell
     }
 }
