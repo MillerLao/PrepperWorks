@@ -9,6 +9,7 @@
 import UIKit
 import Buy
 import KeychainSwift
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -45,6 +46,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
+        SVProgressHUD.show()
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
                 Client.shared.loginUser(userEmail: email, userPassword: password) {
@@ -54,6 +56,7 @@ class LoginViewController: UIViewController {
                         self.keychain.set(token.accessToken, forKey: "accessToken")
                         if self.cameFrom == "videos" {
                             self.performSegue(withIdentifier: "loginToVideos", sender: self)
+                            SVProgressHUD.dismiss()
                         } else {
                             Client.shared.getUserData(token: token.accessToken) {
                                 fName, lName, email in
@@ -71,9 +74,11 @@ class LoginViewController: UIViewController {
                                     self.name = ""
                                 }
                                 self.performSegue(withIdentifier: "loginToAccount", sender: self)
+                                SVProgressHUD.dismiss()
                             }
                         }
                     } else {
+                        SVProgressHUD.dismiss()
                         self.loginFailAlert()
                     }
                 }
