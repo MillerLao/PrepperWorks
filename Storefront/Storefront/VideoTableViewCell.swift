@@ -24,4 +24,8 @@ class VideoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        videoPlayer.clear() //prevents crashing on cell reuse
+    }
+    
 }
