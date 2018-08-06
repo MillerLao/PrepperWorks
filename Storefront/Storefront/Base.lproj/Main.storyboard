@@ -53,22 +53,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pO-LN-kCN">
-                                <rect key="frame" x="16" y="323" width="343" height="34"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forrest" translatesAutoresizingMaskIntoConstraints="NO" id="YUf-6a-4Qe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0a-sE-ADa">
+                                <rect key="frame" x="25" y="263" width="325" height="324"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PPANameless" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-39-BYA">
+                                        <rect key="frame" x="87" y="-78" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33E-Au-Gsl">
-                                <rect key="frame" x="16" y="141" width="343" height="41"/>
+                                <rect key="frame" x="13" y="372" width="343" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pO-LN-kCN">
+                                <rect key="frame" x="16" y="455" width="344" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YUf-6a-4Qe" firstAttribute="top" secondItem="aJZ-DO-f2Q" secondAttribute="top" id="5Af-S2-Rik"/>
+                            <constraint firstItem="svc-Ko-2Bx" firstAttribute="top" secondItem="YUf-6a-4Qe" secondAttribute="bottom" id="LLo-zx-ydR"/>
+                            <constraint firstItem="YUf-6a-4Qe" firstAttribute="leading" secondItem="aJZ-DO-f2Q" secondAttribute="leading" id="Wzd-C8-42O"/>
+                            <constraint firstAttribute="trailing" secondItem="YUf-6a-4Qe" secondAttribute="trailing" id="os8-CT-yfU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="SxW-2E-s7p">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="oxi-2K-H7h">
@@ -908,15 +933,16 @@
         <image name="Image" width="25" height="25"/>
         <image name="PAulitmate" width="250" height="250"/>
         <image name="PPANameless" width="250" height="250"/>
+        <image name="forrest" width="334" height="474"/>
         <image name="landingscreen" width="475" height="710"/>
         <image name="loginBackground" width="191" height="301"/>
         <image name="mountaintint" width="142" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oXJ-cr-giP"/>
-        <segue reference="ucb-2H-Q0e"/>
+        <segue reference="wax-wj-bKU"/>
         <segue reference="dwD-kb-otR"/>
-        <segue reference="E3z-rC-Mxf"/>
-        <segue reference="Jwf-L1-Euq"/>
+        <segue reference="yss-cY-spf"/>
+        <segue reference="tcU-RB-HCO"/>
     </inferredMetricsTieBreakers>
 </document>
